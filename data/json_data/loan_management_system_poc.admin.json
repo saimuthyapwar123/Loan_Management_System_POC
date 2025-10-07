@@ -1,0 +1,32 @@
+[{
+  "_id": {
+    "$oid": "68b935d6cb292d03b6071032"
+  },
+  "username": "lakhan@gamil.com",
+  "password": "$2b$12$pyKDZ3Gd6EVoYym4Rv8KbOZijfbcuPhBUuDPaZp3VtTy1/zU2gKBy",
+  "first_name": "Lakhan",
+  "last_name": "Kumar",
+  "dob": "1995-12-13",
+  "address": "Nagpur",
+  "email": "lakhan@gamil.com",
+  "aadhar_number": {
+    "$numberLong": "663343654326"
+  },
+  "role": "ADMIN"
+},
+{
+  "_id": {
+    "$oid": "68bbefc242b0f4a00a84b2b2"
+  },
+  "username": "ramu@gamil.com",
+  "password": "$2b$12$SGEIozmY6QH1cjIU6M4oa.bg6ywqJpc5oRZLZi6uneeFa2FmbpAQ.",
+  "first_name": "Gola",
+  "last_name": "Ramu",
+  "dob": "1993-01-26",
+  "address": "Pune",
+  "email": "ramu@gamil.com",
+  "aadhar_number": {
+    "$numberLong": "783903654286"
+  },
+  "role": "ADMIN"
+}]

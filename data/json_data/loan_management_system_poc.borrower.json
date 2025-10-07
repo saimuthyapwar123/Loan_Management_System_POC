@@ -1,0 +1,48 @@
+[{
+  "_id": {
+    "$oid": "68b935aecb292d03b6071031"
+  },
+  "username": "76256560942",
+  "password": "$2b$12$priYfIBtpYLpRDGbcd.9M.UbU0fkm9WGX4Gjdn6AHzgqCn4QUMb1a",
+  "first_name": "Ram",
+  "last_name": "Kumar",
+  "dob": "2000-08-23",
+  "address": "Hyderabad",
+  "email": "ram@gamil.com",
+  "aadhar_number": {
+    "$numberLong": "663643654326"
+  },
+  "role": "BORROWER"
+},
+{
+  "_id": {
+    "$oid": "68b97a97ef6c7cff69795d94"
+  },
+  "username": "7212287320",
+  "password": "$2b$12$P/Kfzjxx0ethEJf.ZzApT.sLj31NWXu3xZWxzF6TU6OSzybV0j11O",
+  "first_name": "Sri",
+  "last_name": "Laxmi",
+  "dob": "2000-08-23",
+  "address": "Hyderabad",
+  "email": "laxmi@gamil.com",
+  "aadhar_number": {
+    "$numberLong": "553663654326"
+  },
+  "role": "BORROWER"
+},
+{
+  "_id": {
+    "$oid": "68bbef6642b0f4a00a84b2b1"
+  },
+  "username": "8921342134",
+  "password": "$2b$12$h8BOCMgnSeRv2AIlNcU0XukY95x3c3/384RQ6GLYHMIlVN7iLmQ66",
+  "first_name": "Galle",
+  "last_name": "Krishna",
+  "dob": "1990-06-12",
+  "address": "Nagpur",
+  "email": "krishna@gamil.com",
+  "aadhar_number": {
+    "$numberLong": "613609654926"
+  },
+  "role": "BORROWER"
+}]

@@ -1,0 +1,796 @@
+[{
+  "_id": {
+    "$oid": "68b93623cb292d03b6071033"
+  },
+  "customer_id": "68b935aecb292d03b6071031",
+  "loan_type": "EDUCATION",
+  "principal": 200000,
+  "annual_rate": 6.5,
+  "tenure_months": 12,
+  "status": "CLOSED",
+  "applied_at": {
+    "$date": "2025-09-04T06:48:03.332Z"
+  },
+  "emi_amount": 17259.28,
+  "emi_schedule": [
+    {
+      "month_no": 1,
+      "due_date": "2025-10-01",
+      "emi": 17259.28,
+      "principal_component": 16175.95,
+      "interest_component": 1083.33,
+      "remaining_balance": 183824.05,
+      "late_fee": 0,
+      "total_payment_due": 17259.28
+    },
+    {
+      "month_no": 2,
+      "due_date": "2025-10-31",
+      "emi": 17259.28,
+      "principal_component": 16175.95,
+      "interest_component": 1083.33,
+      "remaining_balance": 183824.05,
+      "late_fee": 0,
+      "total_payment_due": 17259.28
+    },
+    {
+      "month_no": 3,
+      "due_date": "2025-11-30",
+      "emi": 17259.28,
+      "principal_component": 16175.95,
+      "interest_component": 1083.33,
+      "remaining_balance": 183824.05,
+      "late_fee": 0,
+      "total_payment_due": 17259.28
+    },
+    {
+      "month_no": 4,
+      "due_date": "2025-12-30",
+      "emi": 17259.28,
+      "principal_component": 16175.95,
+      "interest_component": 1083.33,
+      "remaining_balance": 183824.05,
+      "late_fee": 0,
+      "total_payment_due": 17259.28
+    },
+    {
+      "month_no": 5,
+      "due_date": "2026-01-29",
+      "emi": 17259.28,
+      "principal_component": 16175.95,
+      "interest_component": 1083.33,
+      "remaining_balance": 183824.05,
+      "late_fee": 0,
+      "total_payment_due": 17259.28
+    },
+    {
+      "month_no": 6,
+      "due_date": "2026-02-28",
+      "emi": 17259.28,
+      "principal_component": 16175.95,
+      "interest_component": 1083.33,
+      "remaining_balance": 183824.05,
+      "late_fee": 0,
+      "total_payment_due": 17259.28
+    },
+    {
+      "month_no": 7,
+      "due_date": "2026-03-30",
+      "emi": 17259.28,
+      "principal_component": 16175.95,
+      "interest_component": 1083.33,
+      "remaining_balance": 183824.05,
+      "late_fee": 0,
+      "total_payment_due": 17259.28
+    },
+    {
+      "month_no": 8,
+      "due_date": "2026-04-29",
+      "emi": 17259.28,
+      "principal_component": 16175.95,
+      "interest_component": 1083.33,
+      "remaining_balance": 183824.05,
+      "late_fee": 0,
+      "total_payment_due": 17259.28
+    },
+    {
+      "month_no": 9,
+      "due_date": "2026-05-29",
+      "emi": 17259.28,
+      "principal_component": 16175.95,
+      "interest_component": 1083.33,
+      "remaining_balance": 183824.05,
+      "late_fee": 0,
+      "total_payment_due": 17259.28
+    },
+    {
+      "month_no": 10,
+      "due_date": "2026-06-28",
+      "emi": 17259.28,
+      "principal_component": 16175.95,
+      "interest_component": 1083.33,
+      "remaining_balance": 183824.05,
+      "late_fee": 0,
+      "total_payment_due": 17259.28
+    },
+    {
+      "month_no": 11,
+      "due_date": "2026-07-28",
+      "emi": 17259.28,
+      "principal_component": 16175.95,
+      "interest_component": 1083.33,
+      "remaining_balance": 183824.05,
+      "late_fee": 0,
+      "total_payment_due": 17259.28
+    }
+  ],
+  "approved_at": {
+    "$date": "2025-09-04T06:51:54.239Z"
+  },
+  "approved_by_admin": "Lakhan Kumar",
+  "disbursed_at": {
+    "$date": "2025-09-04T06:53:51.308Z"
+  },
+  "closed_at": {
+    "$date": "2025-09-04T06:54:29.796Z"
+  },
+  "remaining_balance": 0
+},
+{
+  "_id": {
+    "$oid": "68b97ae0ef6c7cff69795d95"
+  },
+  "customer_id": "68b97a97ef6c7cff69795d94",
+  "loan_type": "PROPERTY",
+  "principal": 200000,
+  "annual_rate": 8.5,
+  "tenure_months": 12,
+  "status": "REJECTED",
+  "applied_at": {
+    "$date": "2025-09-04T11:41:20.280Z"
+  },
+  "emi_amount": 17443.96,
+  "outstanding_principal": 200000,
+  "emi_schedule": [
+    {
+      "month_no": 1,
+      "due_date": "2025-10-01",
+      "emi": 17443.96,
+      "principal_component": 16027.29,
+      "interest_component": 1416.67,
+      "remaining_balance": 183972.71,
+      "late_fee": 0,
+      "total_payment_due": 17443.96
+    },
+    {
+      "month_no": 2,
+      "due_date": "2025-10-31",
+      "emi": 17443.96,
+      "principal_component": 16027.29,
+      "interest_component": 1416.67,
+      "remaining_balance": 183972.71,
+      "late_fee": 0,
+      "total_payment_due": 17443.96
+    },
+    {
+      "month_no": 3,
+      "due_date": "2025-11-30",
+      "emi": 17443.96,
+      "principal_component": 16027.29,
+      "interest_component": 1416.67,
+      "remaining_balance": 183972.71,
+      "late_fee": 0,
+      "total_payment_due": 17443.96
+    },
+    {
+      "month_no": 4,
+      "due_date": "2025-12-30",
+      "emi": 17443.96,
+      "principal_component": 16027.29,
+      "interest_component": 1416.67,
+      "remaining_balance": 183972.71,
+      "late_fee": 0,
+      "total_payment_due": 17443.96
+    },
+    {
+      "month_no": 5,
+      "due_date": "2026-01-29",
+      "emi": 17443.96,
+      "principal_component": 16027.29,
+      "interest_component": 1416.67,
+      "remaining_balance": 183972.71,
+      "late_fee": 0,
+      "total_payment_due": 17443.96
+    },
+    {
+      "month_no": 6,
+      "due_date": "2026-02-28",
+      "emi": 17443.96,
+      "principal_component": 16027.29,
+      "interest_component": 1416.67,
+      "remaining_balance": 183972.71,
+      "late_fee": 0,
+      "total_payment_due": 17443.96
+    },
+    {
+      "month_no": 7,
+      "due_date": "2026-03-30",
+      "emi": 17443.96,
+      "principal_component": 16027.29,
+      "interest_component": 1416.67,
+      "remaining_balance": 183972.71,
+      "late_fee": 0,
+      "total_payment_due": 17443.96
+    },
+    {
+      "month_no": 8,
+      "due_date": "2026-04-29",
+      "emi": 17443.96,
+      "principal_component": 16027.29,
+      "interest_component": 1416.67,
+      "remaining_balance": 183972.71,
+      "late_fee": 0,
+      "total_payment_due": 17443.96
+    },
+    {
+      "month_no": 9,
+      "due_date": "2026-05-29",
+      "emi": 17443.96,
+      "principal_component": 16027.29,
+      "interest_component": 1416.67,
+      "remaining_balance": 183972.71,
+      "late_fee": 0,
+      "total_payment_due": 17443.96
+    },
+    {
+      "month_no": 10,
+      "due_date": "2026-06-28",
+      "emi": 17443.96,
+      "principal_component": 16027.29,
+      "interest_component": 1416.67,
+      "remaining_balance": 183972.71,
+      "late_fee": 0,
+      "total_payment_due": 17443.96
+    },
+    {
+      "month_no": 11,
+      "due_date": "2026-07-28",
+      "emi": 17443.96,
+      "principal_component": 16027.29,
+      "interest_component": 1416.67,
+      "remaining_balance": 183972.71,
+      "late_fee": 0,
+      "total_payment_due": 17443.96
+    }
+  ],
+  "rejected_at": {
+    "$date": "2025-09-04T11:55:34.894Z"
+  },
+  "rejected_by_admin": "Lakhan Kumar",
+  "rejection_reason": "Incomplete documents"
+},
+{
+  "_id": {
+    "$oid": "68bbedb742b0f4a00a84b2ad"
+  },
+  "customer_id": "68b97a97ef6c7cff69795d94",
+  "loan_type": "PROPERTY",
+  "principal": 200000,
+  "annual_rate": 8.5,
+  "tenure_months": 12,
+  "status": "DISBURSED",
+  "applied_at": {
+    "$date": "2025-09-06T08:15:51.588Z"
+  },
+  "emi_amount": 17443.96,
+  "remaining_balance": 50000,
+  "emi_schedule": [
+    {
+      "month_no": 1,
+      "due_date": "2025-10-01",
+      "emi": 17443.96,
+      "principal_component": 16027.29,
+      "interest_component": 1416.67,
+      "remaining_balance": 183972.71,
+      "late_fee": 0,
+      "total_payment_due": 17443.96
+    },
+    {
+      "month_no": 2,
+      "due_date": "2025-10-31",
+      "emi": 17443.96,
+      "principal_component": 16027.29,
+      "interest_component": 1416.67,
+      "remaining_balance": 183972.71,
+      "late_fee": 0,
+      "total_payment_due": 17443.96
+    },
+    {
+      "month_no": 3,
+      "due_date": "2025-11-30",
+      "emi": 17443.96,
+      "principal_component": 16027.29,
+      "interest_component": 1416.67,
+      "remaining_balance": 183972.71,
+      "late_fee": 0,
+      "total_payment_due": 17443.96
+    },
+    {
+      "month_no": 4,
+      "due_date": "2025-12-30",
+      "emi": 17443.96,
+      "principal_component": 16027.29,
+      "interest_component": 1416.67,
+      "remaining_balance": 183972.71,
+      "late_fee": 0,
+      "total_payment_due": 17443.96
+    },
+    {
+      "month_no": 5,
+      "due_date": "2026-01-29",
+      "emi": 17443.96,
+      "principal_component": 16027.29,
+      "interest_component": 1416.67,
+      "remaining_balance": 183972.71,
+      "late_fee": 0,
+      "total_payment_due": 17443.96
+    },
+    {
+      "month_no": 6,
+      "due_date": "2026-02-28",
+      "emi": 17443.96,
+      "principal_component": 16027.29,
+      "interest_component": 1416.67,
+      "remaining_balance": 183972.71,
+      "late_fee": 0,
+      "total_payment_due": 17443.96
+    },
+    {
+      "month_no": 7,
+      "due_date": "2026-03-30",
+      "emi": 17443.96,
+      "principal_component": 16027.29,
+      "interest_component": 1416.67,
+      "remaining_balance": 183972.71,
+      "late_fee": 0,
+      "total_payment_due": 17443.96
+    },
+    {
+      "month_no": 8,
+      "due_date": "2026-04-29",
+      "emi": 17443.96,
+      "principal_component": 16027.29,
+      "interest_component": 1416.67,
+      "remaining_balance": 183972.71,
+      "late_fee": 0,
+      "total_payment_due": 17443.96
+    },
+    {
+      "month_no": 9,
+      "due_date": "2026-05-29",
+      "emi": 17443.96,
+      "principal_component": 16027.29,
+      "interest_component": 1416.67,
+      "remaining_balance": 183972.71,
+      "late_fee": 0,
+      "total_payment_due": 17443.96
+    },
+    {
+      "month_no": 10,
+      "due_date": "2026-06-28",
+      "emi": 17443.96,
+      "principal_component": 16027.29,
+      "interest_component": 1416.67,
+      "remaining_balance": 183972.71,
+      "late_fee": 0,
+      "total_payment_due": 17443.96
+    },
+    {
+      "month_no": 11,
+      "due_date": "2026-07-28",
+      "emi": 17443.96,
+      "principal_component": 16027.29,
+      "interest_component": 1416.67,
+      "remaining_balance": 183972.71,
+      "late_fee": 0,
+      "total_payment_due": 17443.96
+    }
+  ],
+  "approved_at": {
+    "$date": "2025-09-06T08:16:22.570Z"
+  },
+  "approved_by_admin": "Lakhan Kumar",
+  "disbursed_at": {
+    "$date": "2025-09-06T08:17:06.680Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68bbf02a42b0f4a00a84b2b3"
+  },
+  "customer_id": "68bbef6642b0f4a00a84b2b1",
+  "loan_type": "VEHICLE",
+  "principal": 800000,
+  "annual_rate": 9,
+  "tenure_months": 24,
+  "status": "DISBURSED",
+  "applied_at": {
+    "$date": "2025-09-06T08:26:18.981Z"
+  },
+  "emi_amount": 36547.79,
+  "remaining_balance": 700000,
+  "emi_schedule": [
+    {
+      "month_no": 1,
+      "due_date": "2025-10-01",
+      "emi": 36547.79,
+      "principal_component": 30547.79,
+      "interest_component": 6000,
+      "remaining_balance": 769452.21,
+      "late_fee": 0,
+      "total_payment_due": 36547.79
+    },
+    {
+      "month_no": 2,
+      "due_date": "2025-10-31",
+      "emi": 36547.79,
+      "principal_component": 30547.79,
+      "interest_component": 6000,
+      "remaining_balance": 769452.21,
+      "late_fee": 0,
+      "total_payment_due": 36547.79
+    },
+    {
+      "month_no": 3,
+      "due_date": "2025-11-30",
+      "emi": 36547.79,
+      "principal_component": 30547.79,
+      "interest_component": 6000,
+      "remaining_balance": 769452.21,
+      "late_fee": 0,
+      "total_payment_due": 36547.79
+    },
+    {
+      "month_no": 4,
+      "due_date": "2025-12-30",
+      "emi": 36547.79,
+      "principal_component": 30547.79,
+      "interest_component": 6000,
+      "remaining_balance": 769452.21,
+      "late_fee": 0,
+      "total_payment_due": 36547.79
+    },
+    {
+      "month_no": 5,
+      "due_date": "2026-01-29",
+      "emi": 36547.79,
+      "principal_component": 30547.79,
+      "interest_component": 6000,
+      "remaining_balance": 769452.21,
+      "late_fee": 0,
+      "total_payment_due": 36547.79
+    },
+    {
+      "month_no": 6,
+      "due_date": "2026-02-28",
+      "emi": 36547.79,
+      "principal_component": 30547.79,
+      "interest_component": 6000,
+      "remaining_balance": 769452.21,
+      "late_fee": 0,
+      "total_payment_due": 36547.79
+    },
+    {
+      "month_no": 7,
+      "due_date": "2026-03-30",
+      "emi": 36547.79,
+      "principal_component": 30547.79,
+      "interest_component": 6000,
+      "remaining_balance": 769452.21,
+      "late_fee": 0,
+      "total_payment_due": 36547.79
+    },
+    {
+      "month_no": 8,
+      "due_date": "2026-04-29",
+      "emi": 36547.79,
+      "principal_component": 30547.79,
+      "interest_component": 6000,
+      "remaining_balance": 769452.21,
+      "late_fee": 0,
+      "total_payment_due": 36547.79
+    },
+    {
+      "month_no": 9,
+      "due_date": "2026-05-29",
+      "emi": 36547.79,
+      "principal_component": 30547.79,
+      "interest_component": 6000,
+      "remaining_balance": 769452.21,
+      "late_fee": 0,
+      "total_payment_due": 36547.79
+    },
+    {
+      "month_no": 10,
+      "due_date": "2026-06-28",
+      "emi": 36547.79,
+      "principal_component": 30547.79,
+      "interest_component": 6000,
+      "remaining_balance": 769452.21,
+      "late_fee": 0,
+      "total_payment_due": 36547.79
+    },
+    {
+      "month_no": 11,
+      "due_date": "2026-07-28",
+      "emi": 36547.79,
+      "principal_component": 30547.79,
+      "interest_component": 6000,
+      "remaining_balance": 769452.21,
+      "late_fee": 0,
+      "total_payment_due": 36547.79
+    },
+    {
+      "month_no": 12,
+      "due_date": "2026-08-27",
+      "emi": 36547.79,
+      "principal_component": 30547.79,
+      "interest_component": 6000,
+      "remaining_balance": 769452.21,
+      "late_fee": 0,
+      "total_payment_due": 36547.79
+    },
+    {
+      "month_no": 13,
+      "due_date": "2026-09-26",
+      "emi": 36547.79,
+      "principal_component": 30547.79,
+      "interest_component": 6000,
+      "remaining_balance": 769452.21,
+      "late_fee": 0,
+      "total_payment_due": 36547.79
+    },
+    {
+      "month_no": 14,
+      "due_date": "2026-10-26",
+      "emi": 36547.79,
+      "principal_component": 30547.79,
+      "interest_component": 6000,
+      "remaining_balance": 769452.21,
+      "late_fee": 0,
+      "total_payment_due": 36547.79
+    },
+    {
+      "month_no": 15,
+      "due_date": "2026-11-25",
+      "emi": 36547.79,
+      "principal_component": 30547.79,
+      "interest_component": 6000,
+      "remaining_balance": 769452.21,
+      "late_fee": 0,
+      "total_payment_due": 36547.79
+    },
+    {
+      "month_no": 16,
+      "due_date": "2026-12-25",
+      "emi": 36547.79,
+      "principal_component": 30547.79,
+      "interest_component": 6000,
+      "remaining_balance": 769452.21,
+      "late_fee": 0,
+      "total_payment_due": 36547.79
+    },
+    {
+      "month_no": 17,
+      "due_date": "2027-01-24",
+      "emi": 36547.79,
+      "principal_component": 30547.79,
+      "interest_component": 6000,
+      "remaining_balance": 769452.21,
+      "late_fee": 0,
+      "total_payment_due": 36547.79
+    },
+    {
+      "month_no": 18,
+      "due_date": "2027-02-23",
+      "emi": 36547.79,
+      "principal_component": 30547.79,
+      "interest_component": 6000,
+      "remaining_balance": 769452.21,
+      "late_fee": 0,
+      "total_payment_due": 36547.79
+    },
+    {
+      "month_no": 19,
+      "due_date": "2027-03-25",
+      "emi": 36547.79,
+      "principal_component": 30547.79,
+      "interest_component": 6000,
+      "remaining_balance": 769452.21,
+      "late_fee": 0,
+      "total_payment_due": 36547.79
+    },
+    {
+      "month_no": 20,
+      "due_date": "2027-04-24",
+      "emi": 36547.79,
+      "principal_component": 30547.79,
+      "interest_component": 6000,
+      "remaining_balance": 769452.21,
+      "late_fee": 0,
+      "total_payment_due": 36547.79
+    },
+    {
+      "month_no": 21,
+      "due_date": "2027-05-24",
+      "emi": 36547.79,
+      "principal_component": 30547.79,
+      "interest_component": 6000,
+      "remaining_balance": 769452.21,
+      "late_fee": 0,
+      "total_payment_due": 36547.79
+    },
+    {
+      "month_no": 22,
+      "due_date": "2027-06-23",
+      "emi": 36547.79,
+      "principal_component": 30547.79,
+      "interest_component": 6000,
+      "remaining_balance": 769452.21,
+      "late_fee": 0,
+      "total_payment_due": 36547.79
+    },
+    {
+      "month_no": 23,
+      "due_date": "2027-07-23",
+      "emi": 36547.79,
+      "principal_component": 30547.79,
+      "interest_component": 6000,
+      "remaining_balance": 769452.21,
+      "late_fee": 0,
+      "total_payment_due": 36547.79
+    }
+  ],
+  "approved_at": {
+    "$date": "2025-09-06T08:27:54.820Z"
+  },
+  "approved_by_admin": "Gola Ramu",
+  "disbursed_at": {
+    "$date": "2025-09-06T08:28:29.392Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68bbf26942b0f4a00a84b2b5"
+  },
+  "customer_id": "68bbef6642b0f4a00a84b2b1",
+  "loan_type": "GOLD",
+  "principal": 400000,
+  "annual_rate": 10,
+  "tenure_months": 12,
+  "status": "DISBURSED",
+  "applied_at": {
+    "$date": "2025-09-06T08:35:53.959Z"
+  },
+  "emi_amount": 35166.35,
+  "remaining_balance": 400000,
+  "emi_schedule": [
+    {
+      "month_no": 1,
+      "due_date": "2025-10-01",
+      "emi": 35166.35,
+      "principal_component": 31833.02,
+      "interest_component": 3333.33,
+      "remaining_balance": 368166.98,
+      "late_fee": 0,
+      "total_payment_due": 35166.35
+    },
+    {
+      "month_no": 2,
+      "due_date": "2025-10-31",
+      "emi": 35166.35,
+      "principal_component": 31833.02,
+      "interest_component": 3333.33,
+      "remaining_balance": 368166.98,
+      "late_fee": 0,
+      "total_payment_due": 35166.35
+    },
+    {
+      "month_no": 3,
+      "due_date": "2025-11-30",
+      "emi": 35166.35,
+      "principal_component": 31833.02,
+      "interest_component": 3333.33,
+      "remaining_balance": 368166.98,
+      "late_fee": 0,
+      "total_payment_due": 35166.35
+    },
+    {
+      "month_no": 4,
+      "due_date": "2025-12-30",
+      "emi": 35166.35,
+      "principal_component": 31833.02,
+      "interest_component": 3333.33,
+      "remaining_balance": 368166.98,
+      "late_fee": 0,
+      "total_payment_due": 35166.35
+    },
+    {
+      "month_no": 5,
+      "due_date": "2026-01-29",
+      "emi": 35166.35,
+      "principal_component": 31833.02,
+      "interest_component": 3333.33,
+      "remaining_balance": 368166.98,
+      "late_fee": 0,
+      "total_payment_due": 35166.35
+    },
+    {
+      "month_no": 6,
+      "due_date": "2026-02-28",
+      "emi": 35166.35,
+      "principal_component": 31833.02,
+      "interest_component": 3333.33,
+      "remaining_balance": 368166.98,
+      "late_fee": 0,
+      "total_payment_due": 35166.35
+    },
+    {
+      "month_no": 7,
+      "due_date": "2026-03-30",
+      "emi": 35166.35,
+      "principal_component": 31833.02,
+      "interest_component": 3333.33,
+      "remaining_balance": 368166.98,
+      "late_fee": 0,
+      "total_payment_due": 35166.35
+    },
+    {
+      "month_no": 8,
+      "due_date": "2026-04-29",
+      "emi": 35166.35,
+      "principal_component": 31833.02,
+      "interest_component": 3333.33,
+      "remaining_balance": 368166.98,
+      "late_fee": 0,
+      "total_payment_due": 35166.35
+    },
+    {
+      "month_no": 9,
+      "due_date": "2026-05-29",
+      "emi": 35166.35,
+      "principal_component": 31833.02,
+      "interest_component": 3333.33,
+      "remaining_balance": 368166.98,
+      "late_fee": 0,
+      "total_payment_due": 35166.35
+    },
+    {
+      "month_no": 10,
+      "due_date": "2026-06-28",
+      "emi": 35166.35,
+      "principal_component": 31833.02,
+      "interest_component": 3333.33,
+      "remaining_balance": 368166.98,
+      "late_fee": 0,
+      "total_payment_due": 35166.35
+    },
+    {
+      "month_no": 11,
+      "due_date": "2026-07-28",
+      "emi": 35166.35,
+      "principal_component": 31833.02,
+      "interest_component": 3333.33,
+      "remaining_balance": 368166.98,
+      "late_fee": 0,
+      "total_payment_due": 35166.35
+    }
+  ],
+  "approved_at": {
+    "$date": "2025-09-06T08:36:08.892Z"
+  },
+  "approved_by_admin": "Gola Ramu",
+  "disbursed_at": {
+    "$date": "2025-09-06T08:36:43.918Z"
+  }
+}]

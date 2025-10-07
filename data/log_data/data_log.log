@@ -1,0 +1,7 @@
+[2025-09-06 14:10:06,924]  [INFO] ["Line_no" : 76] [disburse_endpoint()] [Loan_id 68bbf26942b0f4a00a84b2b5 is disbursed ]
+[2025-09-06 14:10:07,002]  [WARNING] ["Line_no" : 31] [wrapper()] [Handled HTTPException in disburse_loan: 400 - Loan 68bbf26942b0f4a00a84b2b5 is already DISBURSED]
+[2025-09-06 14:10:07,002]  [WARNING] ["Line_no" : 79] [disburse_endpoint()] [loan disburse warning : 400: Loan 68bbf26942b0f4a00a84b2b5 is already DISBURSED]
+[2025-09-21 15:02:33,465]  [INFO] ["Line_no" : 27] [wrapper()] [user_login executed in 8510.91 ms]
+[2025-09-21 15:02:33,465]  [INFO] ["Line_no" : 39] [login()] [ Successfully logged in: ramu@gamil.com with role ADMIN]
+[2025-09-21 15:02:42,295]  [INFO] ["Line_no" : 27] [wrapper()] [user_login executed in 1312.83 ms]
+[2025-09-21 15:02:42,302]  [INFO] ["Line_no" : 39] [login()] [ Successfully logged in: 8921342134 with role BORROWER]

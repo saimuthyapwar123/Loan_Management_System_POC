@@ -1,0 +1,717 @@
+{
+	"info": {
+		"_postman_id": "c79f2463-40a5-4c8b-a7d0-dc3927931251",
+		"name": "Loan Management System",
+		"description": "Postman collection to exercise the Loan Management System API (register/login/apply/approve/disburse/repay).",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44761608",
+		"_collection_link": "https://prasad-666947.postman.co/workspace/prasad's-Workspace~94b7bbad-5b40-4f0b-8e97-62d59a0c04c4/collection/44761608-c79f2463-40a5-4c8b-a7d0-dc3927931251?action=share&source=collection_link&creator=44761608"
+	},
+	"item": [
+		{
+			"name": "Borrower Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"8921342134\",\r\n  \"password\": \"19900612\",\r\n  \"first_name\": \"galle\",\r\n  \"last_name\": \"krishna\",\r\n  \"dob\": \"1990-06-12\",\r\n  \"address\": \"hyd\",\r\n  \"email\":\"krishna@gamil.com\",\r\n  \"aadhar_number\": 613609654926,\r\n  \"role\":\"BORROWER\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/auth/register",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Admin Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"ramu@gamil.com\",\r\n  \"password\": \"19951213\",\r\n  \"first_name\": \"Gola\",\r\n  \"last_name\": \"ramu\",\r\n  \"dob\": \"1993-01-26\",\r\n  \"address\": \"Pune\",\r\n  \"email\":\"ramu@gamil.com\",\r\n  \"aadhar_number\": 783903654286,\r\n  \"role\":\"ADMIN\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/auth/register",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Admin Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"ramu@gamil.com\",\r\n  \"password\": \"19951213\",\r\n  \"role\":\"ADMIN\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/auth/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Borrower Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"8921342134\",\r\n  \"password\": \"19900612\",\r\n  \"role\":\"BORROWER\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/auth/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Apply Loan (borrower)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjhiYmVmNjY0MmIwZjRhMDBhODRiMmIxIiwicm9sZSI6IkJPUlJPV0VSIiwiZXhwIjoxNzU3MTU0MzIzfQ.QIptJ7136BxnZgx0C9MWCpfFB8rNlOEjhPKyxsUjvB4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"loan_type\": \"GOLD\",\r\n  \"principal\": 400000,\r\n  \"tenure_months\": 12,\r\n  \"start_date\": \"2025-09-01\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/loans/apply",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"loans",
+						"apply"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Approve Loan (admin)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjhiYmVmYzI0MmIwZjRhMDBhODRiMmIyIiwicm9sZSI6IkFETUlOIiwiZXhwIjoxNzU3MTU0Mjk3fQ.dKX70HLPP74D6Tx7X-zcoGfnLS7N_uR4K1LuuVp4RR4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/loans/68bbf26942b0f4a00a84b2b5/approve",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"loans",
+						"68bbf26942b0f4a00a84b2b5",
+						"approve"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Disburse Loan (admin)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjhiYmVmYzI0MmIwZjRhMDBhODRiMmIyIiwicm9sZSI6IkFETUlOIiwiZXhwIjoxNzU3MTU0Mjk3fQ.dKX70HLPP74D6Tx7X-zcoGfnLS7N_uR4K1LuuVp4RR4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/loans/68bbf26942b0f4a00a84b2b5/disburse",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"loans",
+						"68bbf26942b0f4a00a84b2b5",
+						"disburse"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Repay Loan (admin)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjhiYmVmYzI0MmIwZjRhMDBhODRiMmIyIiwicm9sZSI6IkFETUlOIiwiZXhwIjoxNzU3MTU0Mjk3fQ.dKX70HLPP74D6Tx7X-zcoGfnLS7N_uR4K1LuuVp4RR4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/loans/68bbf02a42b0f4a00a84b2b3/repay?amount=100000",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"loans",
+						"68bbf02a42b0f4a00a84b2b3",
+						"repay"
+					],
+					"query": [
+						{
+							"key": "amount",
+							"value": "100000"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Reject Loan (admin)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjhiOTM1ZDZjYjI5MmQwM2I2MDcxMDMyIiwicm9sZSI6IkFETUlOIiwiZXhwIjoxNzU2OTk0MDY1fQ.ad2Qvhkt4YBXFsoESGAsfGEitkngohaYeTTiFrGOb3U",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"reason\": \"Incomplete documents\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/loans/68b97ae0ef6c7cff69795d95/reject",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"loans",
+						"68b97ae0ef6c7cff69795d95",
+						"reject"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Applied Loans (admin)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjhiOTM1ZDZjYjI5MmQwM2I2MDcxMDMyIiwicm9sZSI6IkFETUlOIiwiZXhwIjoxNzU3MTUxNzkwfQ.ZkzKkqHmdo7vsJj5VoX6VrtwygfO6J-418uBjtZzHFI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/loans/list_of_applied_loan",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"loans",
+						"list_of_applied_loan"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Approved Loans (admin)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjhiYmVmYzI0MmIwZjRhMDBhODRiMmIyIiwicm9sZSI6IkFETUlOIiwiZXhwIjoxNzU3MTU0Mjk3fQ.dKX70HLPP74D6Tx7X-zcoGfnLS7N_uR4K1LuuVp4RR4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/loans/list_of_approved_loans",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"loans",
+						"list_of_approved_loans"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Disbursed Loans (admin)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjhiOTM1ZDZjYjI5MmQwM2I2MDcxMDMyIiwicm9sZSI6IkFETUlOIiwiZXhwIjoxNzU3MTUxNzkwfQ.ZkzKkqHmdo7vsJj5VoX6VrtwygfO6J-418uBjtZzHFI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/loans/list_of_disbursed_loans",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"loans",
+						"list_of_disbursed_loans"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Closed Loans (admin)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjhiOTM1ZDZjYjI5MmQwM2I2MDcxMDMyIiwicm9sZSI6IkFETUlOIiwiZXhwIjoxNzU3MTUxNzkwfQ.ZkzKkqHmdo7vsJj5VoX6VrtwygfO6J-418uBjtZzHFI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/loans/list_of_closed_loans",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"loans",
+						"list_of_closed_loans"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Rejected Loans (admin)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjhiOTM1ZDZjYjI5MmQwM2I2MDcxMDMyIiwicm9sZSI6IkFETUlOIiwiZXhwIjoxNzU2OTk0MDY1fQ.ad2Qvhkt4YBXFsoESGAsfGEitkngohaYeTTiFrGOb3U",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/loans/list_of_rejected_loans",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"loans",
+						"list_of_rejected_loans"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Current User (me)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjhiOTM1YWVjYjI5MmQwM2I2MDcxMDMxIiwicm9sZSI6IkJPUlJPV0VSIiwiZXhwIjoxNzU2OTc1NjI2fQ.A4rft6pumD1eUqGrhLM-voxiPZVvyQ6LLnPvIah2BbQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/auth/me",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"auth",
+						"me"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Users (admin)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjhiOTM1ZDZjYjI5MmQwM2I2MDcxMDMyIiwicm9sZSI6IkFETUlOIiwiZXhwIjoxNzU3MTUxNzkwfQ.ZkzKkqHmdo7vsJj5VoX6VrtwygfO6J-418uBjtZzHFI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/auth/users?role=BORROWER",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"auth",
+						"users"
+					],
+					"query": [
+						{
+							"key": "role",
+							"value": "BORROWER"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
