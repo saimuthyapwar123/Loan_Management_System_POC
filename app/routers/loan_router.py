@@ -30,7 +30,7 @@ async def apply_endpoint(payload: LoanApplyRequest, current = Depends(get_curren
         doc = await apply_loan(data)
 
         doc["id"] = str(doc["_id"])
-        logger.info(f"Successfully loan applied : {doc["id"]}")
+        logger.info(f"Successfully loan applied : {doc['id']}")
 
         return LoanResponse(
             id=doc["id"],
@@ -62,7 +62,7 @@ async def approve_endpoint(loan_id: str, current = Depends(require_role("ADMIN")
 
         admin_id = str(admin_doc["_id"])
         logger.info(f"Loan id {loan_id} approved by {admin_id}")
-        return await approve_loan(current, loan_id, admin_id)
+        return await approve_loan(loan_id, admin_id)
     except (LoanNotFound, InvalidLoanOperation,LoanAlreadyStatus) as e:
         logger.warning(f"loan approve warning : {str(e)}")
         raise e
@@ -74,7 +74,7 @@ async def approve_endpoint(loan_id: str, current = Depends(require_role("ADMIN")
 async def disburse_endpoint(loan_id: str, admin = Depends(require_role("ADMIN"))):
     try:
         logger.info(f"Loan_id {loan_id} is disbursed ")
-        return await disburse_loan(admin, loan_id)
+        return await disburse_loan(loan_id)
     except (LoanNotFound, InvalidLoanOperation,LoanAlreadyStatus) as e:
         logger.warning(f"loan disburse warning : {str(e)}")
         raise e
@@ -83,9 +83,9 @@ async def disburse_endpoint(loan_id: str, admin = Depends(require_role("ADMIN"))
         raise HTTPException(status_code=500, detail=str(e))
 
 @router.post("/{loan_id}/repay")
-async def repay_endpoint(loan_id: str, amount: float,admin = Depends(require_role("ADMIN"))):
+async def repay_endpoint(loan_id: str, amount: float,admin = Depends(require_role("BORROWER"))):
     try:
-        return await record_repayment(admin, loan_id, amount)
+        return await record_repayment(loan_id, amount)
     except (LoanNotFound, InvalidLoanOperation,LoanAlreadyStatus) as e:
         logger.warning(f"loan repayment warning : {str(e)}")
         raise e
@@ -110,7 +110,7 @@ async def reject_endpoint(
         admin_id = str(admin_doc["_id"])
         
         logger.info(f"Loan {loan_id} rejected by {admin_id}")
-        return await reject_loan(current, loan_id, admin_id, reason=body.reason)
+        return await reject_loan(loan_id, admin_id, reason=body.reason)
 
     except (LoanNotFound, InvalidLoanOperation, LoanAlreadyStatus) as e:
         logger.warning(f"loan rejected warning : {str(e)}")
@@ -119,63 +119,63 @@ async def reject_endpoint(
         logger.exception(f"Error rejecting loan : {str(e)}")
         raise HTTPException(status_code=500, detail=str(e))
     
-@router.get("/list_of_applied_loan")
-async def list_applied_loans(admin = Depends(require_role("ADMIN"))):
-    try:
-        loans = await get_all_applied_loans()
-        if not loans:
-            return {"message": "No applied loans found"}
-        logger.info(f"List of applied loan data fetched")
-        return loans
-    except Exception as e:
-        logger.exception(f"Error list_of_applied_loan loan : {str(e)}")
-        raise HTTPException(status_code=500, detail=str(e))
+# @router.get("/list_of_applied_loan")
+# async def list_applied_loans(admin = Depends(require_role("ADMIN"))):
+#     try:
+#         loans = await get_all_applied_loans()
+#         if not loans:
+#             return {"message": "No applied loans found"}
+#         logger.info(f"List of applied loan data fetched")
+#         return loans
+#     except Exception as e:
+#         logger.exception(f"Error list_of_applied_loan loan : {str(e)}")
+#         raise HTTPException(status_code=500, detail=str(e))
     
-@router.get("/list_of_approved_loans")
-async def list_approved_loans(admin = Depends(require_role("ADMIN"))):
-    try:
-        loans = await get_all_approved_loans()
-        if not loans:
-            return {"message": "No approved loans found"}
-        logger.info(f"List of approved loan data fetched")
-        return loans
-    except Exception as e:
-        logger.exception(f"Error list_of_approved_loans loan : {str(e)}")
-        raise HTTPException(status_code=500, detail=str(e))
+# @router.get("/list_of_approved_loans")
+# async def list_approved_loans(admin = Depends(require_role("ADMIN"))):
+#     try:
+#         loans = await get_all_approved_loans()
+#         if not loans:
+#             return {"message": "No approved loans found"}
+#         logger.info(f"List of approved loan data fetched")
+#         return loans
+#     except Exception as e:
+#         logger.exception(f"Error list_of_approved_loans loan : {str(e)}")
+#         raise HTTPException(status_code=500, detail=str(e))
     
-@router.get("/list_of_disbursed_loans")
-async def list_disbursed_loans(admin = Depends(require_role("ADMIN"))):
-    try:
-        loans = await get_all_disbursed_loans()
-        if not loans:
-            return {"message": "No disbursed loans found"}
-        logger.info(f"List of disbursed loan data fetched")
-        return loans
-    except Exception as e:
-        logger.exception(f"Error list_of_disbursed_loans loan : {str(e)}")
-        raise HTTPException(status_code=500, detail=str(e))
+# @router.get("/list_of_disbursed_loans")
+# async def list_disbursed_loans(admin = Depends(require_role("ADMIN"))):
+#     try:
+#         loans = await get_all_disbursed_loans()
+#         if not loans:
+#             return {"message": "No disbursed loans found"}
+#         logger.info(f"List of disbursed loan data fetched")
+#         return loans
+#     except Exception as e:
+#         logger.exception(f"Error list_of_disbursed_loans loan : {str(e)}")
+#         raise HTTPException(status_code=500, detail=str(e))
     
-@router.get("/list_of_closed_loans")
-async def list_closeded_loans(admin = Depends(require_role("ADMIN"))):
-    try:
-        loans = await get_all_closed_loans()
-        if not loans:
-            return {"message": "No closed loans found"}
-        logger.info(f"List of closed loan data fetched")
-        return loans
-    except Exception as e:
-        logger.exception(f"Error list_of_closed_loans loan : {str(e)}")
-        raise HTTPException(status_code=500, detail=str(e))
+# @router.get("/list_of_closed_loans")
+# async def list_closeded_loans(admin = Depends(require_role("ADMIN"))):
+#     try:
+#         loans = await get_all_closed_loans()
+#         if not loans:
+#             return {"message": "No closed loans found"}
+#         logger.info(f"List of closed loan data fetched")
+#         return loans
+#     except Exception as e:
+#         logger.exception(f"Error list_of_closed_loans loan : {str(e)}")
+#         raise HTTPException(status_code=500, detail=str(e))
 
-@router.get("/list_of_rejected_loans")
-async def list_rejected_loans(admin = Depends(require_role("ADMIN"))):
-    try:
-        loans = await get_all_rejected_loans()
-        if not loans:
-            return {"message": "No rejected loans found"}
-        logger.info(f"List of rejected loan data fetched")
-        return loans
-    except Exception as e:
-        logger.exception(f"Error list_of_rejected_loans loan : {str(e)}")
-        raise HTTPException(status_code=500, detail=str(e))
+# @router.get("/list_of_rejected_loans")
+# async def list_rejected_loans(admin = Depends(require_role("ADMIN"))):
+#     try:
+#         loans = await get_all_rejected_loans()
+#         if not loans:
+#             return {"message": "No rejected loans found"}
+#         logger.info(f"List of rejected loan data fetched")
+#         return loans
+#     except Exception as e:
+#         logger.exception(f"Error list_of_rejected_loans loan : {str(e)}")
+#         raise HTTPException(status_code=500, detail=str(e))
 

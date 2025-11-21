@@ -1,3 +1,5 @@
+import re
+from fastapi import HTTPException, status
 from pydantic import BaseModel, EmailStr,StringConstraints, validator
 from typing import Literal, Annotated, Union
 from datetime import date, datetime
@@ -14,6 +16,7 @@ class RegisterUser(BaseModel):
     address: str
     email:EmailStr | None = None
     aadhar_number:int
+    pan_number:str
     role: Literal["BORROWER", "ADMIN"] = "BORROWER"  # BORROWER or ADMIN
 
     @validator("first_name", "last_name", "address", pre=True)
@@ -36,6 +39,20 @@ class RegisterUser(BaseModel):
         if not 100000000000 <= v <= 999999999999:
             raise ValueError("Aadhaar must be 12 digits")
         return v
+    
+    @validator("pan_number")
+    def validate_pan(cls, pan_number: str):
+        """
+        Validate Indian PAN format: AAAAA9999A
+        """
+        pan_pattern = r"^[A-Z]{5}[0-9]{4}[A-Z]{1}$"
+
+        if not re.match(pan_pattern, pan_number):
+            raise HTTPException(
+                status_code=status.HTTP_400_BAD_REQUEST,
+                detail="Invalid PAN format. Must be 10 characters: AAAAA9999A (e.g. ABCDE1234F)"
+            )
+        return pan_number
 
 
 class LoginModel(BaseModel):

@@ -8,5 +8,9 @@ db = client[DB_NAME]
 admin_col = db["admin"]
 borrower_col = db["borrower"]
 
+
 def get_collection(name):
     return db[name]
+
+loans_col = get_collection("loans")
+repayments_col = get_collection("repayments")

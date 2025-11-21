@@ -1,6 +1,7 @@
+from typing import List
 from fastapi import HTTPException
 from app.config.settings import DEFAULT_RATES
-from app.database.db import get_collection
+from app.database.db import loans_col,repayments_col
 from app.utils.emi_calculator import calculate_emi, generate_schedule_per_month
 from datetime import date, datetime
 from bson import ObjectId
@@ -11,28 +12,40 @@ from app.database.db import admin_col, borrower_col
 
 logger = get_logger("loan_repayments_col")
 
-loans_col = get_collection("loans")
-repayments_col = get_collection("repayments")
+
 
 @log_execution_time
 async def apply_loan(payload: dict) -> dict:
     # -------- check role ------------
     if payload.get("role") in "BORROWER":
 
-        # Prevent multiple loans of the same type unless closed/rejected
-        active_loan = await loans_col.find_one(
+        customer_id = payload["customer_id"]
+        blocked_statuses = ["APPLIED", "APPROVED", "DISBURSED"]
+
+        cursor = loans_col.find(
             {
-                "customer_id": payload["customer_id"],
-                "loan_type": payload["loan_type"],
-                "status": {"$nin": ["CLOSED", "REJECTED"]},
-            }
+                "customer_id": customer_id,
+                "status": {"$in": blocked_statuses}
+            },
+            {"_id": 1, "loan_type": 1, "status": 1}
         )
 
-        if active_loan:
+        active_loans = await cursor.to_list(length=None)
+        active_count = len(active_loans)
+
+        if active_count >= 2:
+            loan_ids = [str(loan["_id"]) for loan in active_loans]
+            loan_types = [loan["loan_type"] for loan in active_loans]
+            statuses = [loan["status"] for loan in active_loans]
             raise HTTPException(
                 status_code=400,
-                detail=f"You already have an active {payload['loan_type']} loan. "
-                    f"Please close it before applying for another {payload['loan_type']} loan."
+                detail=(
+            f"You already have 2 active loans.\n"
+            f"Loan IDs: {loan_ids}\n"
+            f"Loan Types: {loan_types}\n"
+            f"Statuses : {statuses}\n"
+            "Please close or complete one loan before applying again."
+        )
             )
       
         loan_type = payload.get("loan_type")
@@ -50,17 +63,24 @@ async def apply_loan(payload: dict) -> dict:
         # ---------------- EMI & amortization ----------------
         emi = calculate_emi(payload["principal"], annual_rate, payload["tenure_months"])
         schedule = generate_schedule_per_month(payload["principal"], annual_rate, payload["tenure_months"], start_date)
-        
+
+        # ---------------- Total Interest & Total Payable ----------------
+        total_interest = sum(m["interest_component"] for m in schedule)
+        total_payable = float(payload["principal"]) + total_interest
+                
         # ---------------- Prepare loan document ----------------
         doc = {
             "customer_id": payload["customer_id"],
             "loan_type": loan_type,
+            "credit_score":int(payload["credit_score"]),
             "principal": float(payload["principal"]),
             "annual_rate": float(annual_rate),
             "tenure_months": int(payload["tenure_months"]),
             "status": "APPLIED",
             "applied_at": datetime.utcnow(),
             "emi_amount": emi,
+            "total_interest": round(total_interest, 2),
+            "total_payable": round(total_payable, 2),
             "remaining_balance": float(payload["principal"]),
             "emi_schedule": schedule,
         }
@@ -161,8 +181,8 @@ async def record_repayment(loan_id: str, amount: float, paid_on: datetime = None
     await loans_col.update_one({"_id": loan["_id"]}, {"$set": {"remaining_balance": new_outstanding}})
     if new_outstanding == 0.0:
         await loans_col.update_one({"_id": loan["_id"]}, {"$set": {"status": "CLOSED", "closed_at": datetime.utcnow()}})
-        logger.info(f"Loan {loan["_id"]} is Closed , outstanding is {new_outstanding} ")
-    logger.info(f"Loan {loan["_id"]} paid : {payment} and remaining_balance : {new_outstanding}")
+        logger.info(f"Loan {loan['_id']} is Closed , outstanding is {new_outstanding} ")
+    logger.info(f"Loan {loan['_id']} paid : {payment} and remaining_balance : {new_outstanding}")
     return {"loan_id": loan_id, "paid": payment, "remaining_balance": new_outstanding}
 
 

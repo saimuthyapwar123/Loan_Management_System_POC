@@ -56,7 +56,7 @@ async def me(current=Depends(get_current_user)):
     if not user_doc:
         raise HTTPException(status_code=401, detail="Invalid token: missing user data")
     
-    logger.info(f"Current user is {user_doc.get("username")} with role {current.get("role")}")
+    logger.info(f"Current user is {user_doc.get('username')} with role {current.get('role')}")
     return {
         "id": str(user_doc["_id"]),
         "username": user_doc.get("username"),
