@@ -1,0 +1,455 @@
+{
+	"info": {
+		"_postman_id": "c79f2463-40a5-4c8b-a7d0-dc3927931251",
+		"name": "Loan Management System",
+		"description": "Postman collection to exercise the Loan Management System API (register/login/apply/approve/disburse/repay).",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44761608",
+		"_collection_link": "https://prasad-666947.postman.co/workspace/prasad's-Workspace~94b7bbad-5b40-4f0b-8e97-62d59a0c04c4/collection/44761608-c79f2463-40a5-4c8b-a7d0-dc3927931251?action=share&source=collection_link&creator=44761608"
+	},
+	"item": [
+		{
+			"name": "Borrower Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"8190567098\",\r\n  \"password\": \"20000111\",\r\n  \"first_name\": \"priya\",\r\n  \"last_name\": \"chauhan\",\r\n  \"dob\": \"2000-01-11\",\r\n  \"address\": \"noida\",\r\n  \"email\":\"priya@gamil.com\",\r\n  \"pan_number\":\"AJYEQ2372H\",\r\n  \"aadhar_number\": 996713620087,\r\n  \"role\":\"BORROWER\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/auth/register",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Admin Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"mani@gamil.com\",\r\n  \"password\": \"19851110\",\r\n  \"first_name\": \"ManiRam\",\r\n  \"last_name\": \"Rathod\",\r\n  \"dob\": \"1985-11-10\",\r\n  \"address\": \"Pune\",\r\n  \"email\":\"mani@gamil.com\",\r\n  \"pan_number\":\"MKLWE2310G\",\r\n  \"aadhar_number\": 897626550098,\r\n  \"role\":\"ADMIN\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/auth/register",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Admin Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"mani@gamil.com\",\r\n  \"password\": \"19851110\",\r\n  \"role\":\"ADMIN\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/auth/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Borrower Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"8190567098\",\r\n  \"password\": \"20000111\",\r\n  \"role\":\"BORROWER\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/auth/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Apply Loan (borrower)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjkyMmMxODE5ZmIyYjE2YThmYjVjZDJlIiwicm9sZSI6IkJPUlJPV0VSIiwiZXhwIjoxNzYzODkyNjYwfQ.go2AsdvCfvW6CuKz3DtQAco5e3Zf0PZPj3jILLY8BE8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"loan_type\": \"VEHICLE\",\r\n  \"principal\": 800000,\r\n  \"tenure_months\": 30,\r\n  \"credit_score\": 750,\r\n  \"start_date\": \"2025-09-01\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/loans/apply",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"loans",
+						"apply"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Approve Loan (admin)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjkyMmMwZWY5ZmIyYjE2YThmYjVjZDJkIiwicm9sZSI6IkFETUlOIiwiZXhwIjoxNzYzODkyODU5fQ.9c-Yj7aj55aP0aChFFqzTjd0n-PlOM84iam8sLA62XQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/loans/6922c33c9fb2b16a8fb5cd32/approve",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"loans",
+						"6922c33c9fb2b16a8fb5cd32",
+						"approve"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Disburse Loan (admin)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjkyMmMwZWY5ZmIyYjE2YThmYjVjZDJkIiwicm9sZSI6IkFETUlOIiwiZXhwIjoxNzYzODkyODU5fQ.9c-Yj7aj55aP0aChFFqzTjd0n-PlOM84iam8sLA62XQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/loans/6922c2039fb2b16a8fb5cd30/disburse",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"loans",
+						"6922c2039fb2b16a8fb5cd30",
+						"disburse"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Repay Loan (borrower)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjkyMmMxODE5ZmIyYjE2YThmYjVjZDJlIiwicm9sZSI6IkJPUlJPV0VSIiwiZXhwIjoxNzYzODkyNjYwfQ.go2AsdvCfvW6CuKz3DtQAco5e3Zf0PZPj3jILLY8BE8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/loans/6922c2039fb2b16a8fb5cd30/repay?amount=10000",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"loans",
+						"6922c2039fb2b16a8fb5cd30",
+						"repay"
+					],
+					"query": [
+						{
+							"key": "amount",
+							"value": "10000"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Reject Loan (admin)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjkyMmMwZWY5ZmIyYjE2YThmYjVjZDJkIiwicm9sZSI6IkFETUlOIiwiZXhwIjoxNzYzODkyODU5fQ.9c-Yj7aj55aP0aChFFqzTjd0n-PlOM84iam8sLA62XQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"reason\": \"aadhar_number is not linked with bank\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/loans/6922c3949fb2b16a8fb5cd33/reject",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"loans",
+						"6922c3949fb2b16a8fb5cd33",
+						"reject"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Current User (me)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjkyMmMxODE5ZmIyYjE2YThmYjVjZDJlIiwicm9sZSI6IkJPUlJPV0VSIiwiZXhwIjoxNzYzODkyNjYwfQ.go2AsdvCfvW6CuKz3DtQAco5e3Zf0PZPj3jILLY8BE8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/auth/me",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"auth",
+						"me"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Users (admin)",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/auth/users?role=ADMIN",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"auth",
+						"users"
+					],
+					"query": [
+						{
+							"key": "role",
+							"value": "ADMIN"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

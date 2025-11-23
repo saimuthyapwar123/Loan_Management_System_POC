@@ -1,0 +1,43 @@
+{
+	"info": {
+		"_postman_id": "ae324133-4668-437a-895c-a9cb90d1e1c3",
+		"name": "LMS_GenAI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44761608",
+		"_collection_link": "https://prasad-666947.postman.co/workspace/prasad's-Workspace~94b7bbad-5b40-4f0b-8e97-62d59a0c04c4/collection/44761608-ae324133-4668-437a-895c-a9cb90d1e1c3?action=share&source=collection_link&creator=44761608"
+	},
+	"item": [
+		{
+			"name": "RAG Pipeline",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"query\": \"can i apply another loan\",\r\n  \"k\": 3\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/loans_RAG_pipeline/69205f108a717252ff152bdc",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"loans_RAG_pipeline",
+						"69205f108a717252ff152bdc"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

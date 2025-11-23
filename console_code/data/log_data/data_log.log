@@ -1,0 +1,6 @@
+[2025-11-23 13:53:16,779]  [INFO] ["Line_no" : 27] [wrapper()] [list_users executed in 60.19 ms]
+[2025-11-23 13:53:16,779]  [INFO] ["Line_no" : 73] [list_all_users()] [user data with role ADMIN is fetch]
+[2025-11-23 13:55:02,144]  [INFO] ["Line_no" : 27] [wrapper()] [list_users executed in 1915.52 ms]
+[2025-11-23 13:55:02,145]  [INFO] ["Line_no" : 73] [list_all_users()] [user data with role BORROWER is fetch]
+[2025-11-23 13:55:25,630]  [INFO] ["Line_no" : 27] [wrapper()] [list_users executed in 63.58 ms]
+[2025-11-23 13:55:25,630]  [INFO] ["Line_no" : 73] [list_all_users()] [user data with role ADMIN is fetch]
