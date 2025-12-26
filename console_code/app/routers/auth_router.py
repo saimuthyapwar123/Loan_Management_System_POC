@@ -35,7 +35,11 @@ async def register(user: RegisterUser):
 @router.post("/login", response_model=TokenModel)
 async def login(user: LoginModel):
     try:
-        response = await user_login(user.username, user.password,user.role)
+        response = await user_login(
+                    username=user.username,
+                    password=user.password,
+                    role=user.role
+                )
         logger.info(f" Successfully logged in: {user.username} with role {user.role}")
         return response
 

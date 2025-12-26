@@ -19,9 +19,16 @@ async def register_user(data):
     # Password policy
     if not is_strong_password(data.password):
         raise PasswordPolicyException()
-
-    data.password = hash_password(data.password)
+    
+    # Hash password safely (bcrypt-safe)
+    try:
+        hashed_password = hash_password(data.password)
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail=str(e))
+    
     doc = data.dict()
+    doc["password"] = hashed_password  # overwrite plain password
+    
 
     if isinstance(doc.get("dob"), date):
         doc["dob"] = doc["dob"].isoformat()
@@ -37,6 +44,8 @@ async def register_user(data):
 
 @log_execution_time
 async def user_login(username: str, password: str, role: str):
+    password = password.strip()
+
     # Fetch from correct collection based on role
     if role == "ADMIN":
         user = await admin_col.find_one({"username": username, "role": role})
@@ -46,8 +55,13 @@ async def user_login(username: str, password: str, role: str):
     if not user:
         raise HTTPException(status_code=401, detail="username or role not found")
 
-    if not verify_password(password, user["password"]):
-        raise HTTPException(status_code=401, detail="Invalid password")
+    try:
+        if not verify_password(password, user["password"]):
+            raise HTTPException(status_code=401, detail="Invalid password")
+    except ValueError:
+        # bcrypt hard failure protection
+        raise HTTPException(status_code=400, detail="Invalid password format")
+
 
     token = create_access_token({"user_id": str(user["_id"]), "role": user["role"]})
     return {
