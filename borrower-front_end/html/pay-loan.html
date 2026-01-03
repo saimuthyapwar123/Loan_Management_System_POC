@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Pay Loan | LoanSense AI</title>
+  <link rel="icon" type="image/png" href="../assets/logo-favicon.png">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../css/nav-bar.css">
+  <link rel="stylesheet" href="../css/pay-loan.css">
+</head>
+
+<body>
+
+  <!-- ================= HEADER ================= -->
+  <header class="app-header">
+    <div class="header-left">
+      <img src="../assets/loan_logo.png" alt="Logo" class="header-logo">
+    </div>
+
+    <div class="header-center">
+      <h2>LoanSense AI</h2>
+    </div>
+
+    <div class="header-right">
+      <div class="profile-icon" id="profileToggle">👤</div>
+    </div>
+
+    <!-- ===== FULL PROFILE PANEL ===== -->
+    <div class="profile-panel" id="profilePanel">
+
+      <div class="profile-panel-content">
+        <a href="borrower-dashboard.html">🏠 Home</a>
+        <a href="borrower-profile.html">👤 Profile</a>
+        <a href="loan-apply.html">📝 Apply Loan</a>
+        <a href="my-loans.html">📄 My Loans</a>
+        <a href="loan-repay.html">💰 Repayment</a>
+      </div>
+
+      <!-- Logout always at bottom -->
+      <div class="profile-panel-footer">
+        <button class="logout-btn" onclick="logout()">Logout</button>
+      </div>
+    </div>
+
+  </header>
+
+
+  <main class="dashboard-content">
+
+    <div class="pay-card">
+      <h2>Pay Loan</h2>
+      <p class="sub-text">Secure loan repayment</p>
+
+      <div class="info-box" id="loanInfo"></div>
+
+      <!-- PAYMENT METHOD -->
+      <div class="form-group">
+        <label>Payment Method</label>
+        <select id="paymentMethod" onchange="handlePaymentMode()">
+          <option value="">-- Select --</option>
+          <option value="UPI">UPI</option>
+          <option value="DEBIT">Debit Card</option>
+          <option value="CREDIT">Credit Card</option>
+        </select>
+      </div>
+
+      <!-- UPI -->
+      <div class="form-group hidden" id="upiField">
+        <label>UPI ID</label>
+        <input type="text" id="upiId" placeholder="example@upi">
+      </div>
+
+      <!-- DEBIT CARD -->
+      <div class="form-group hidden" id="debitField">
+        <label>Card Holder Name</label>
+        <input type="text" id="debitName" placeholder="Name on Debit Card"><br><br>
+
+
+        <label>Debit Card Number</label>
+        <input type="text" id="debitCard" placeholder="1234 5678 9012 3456">
+      </div>
+
+      <!-- CREDIT CARD -->
+      <div class="form-group hidden" id="creditField">
+        <label>Card Holder Name</label>
+        <input type="text" id="debitName" placeholder="Name on Debit Card">
+
+        <label>Credit Card Number</label>
+        <input type="text" id="creditCard" placeholder="1234 5678 9012 3456">
+      </div>
+
+      <!-- AMOUNT -->
+      <div class="form-group">
+        <label>Amount (₹)</label>
+        <input type="number" id="amount" placeholder="Enter amount">
+      </div>
+
+      <button class="btn-primary" onclick="payLoan()">Pay Now</button>
+
+      <p id="message" class="message"></p>
+    </div>
+
+  </main>
+
+  <script src="../js/auth-guard.js"></script>
+  <script src="../js/logout.js"></script>
+  <script src="../js/pay-loan.js"></script>
+  <script src="../js/menu-bar.js"></script>
+
+
+</body>
+
+</html>

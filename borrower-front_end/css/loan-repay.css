@@ -1,0 +1,19 @@
+/* Button for repayment */
+.btn-pay {
+    padding: 8px 18px;
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+    color: white;
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.btn-pay:hover {
+    opacity: 0.9;
+}
+
+.btn-pay:disabled {
+    background: #9ca3af;
+    cursor: not-allowed;
+}

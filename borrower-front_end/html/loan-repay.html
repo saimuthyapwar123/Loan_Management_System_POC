@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Loan Repayment | LoanSense AI</title>
+    <link rel="icon" type="image/png" href="../assets/logo-favicon.png">
+
+
+    <link rel="stylesheet" href="../css/nav-bar.css">
+    <link rel="stylesheet" href="../css/my-loan.css">
+    <link rel="stylesheet" href="../css/loan-repay.css">
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+    <header class="app-header">
+        <div class="header-left">
+            <img src="../assets/loan_logo.png" class="header-logo">
+        </div>
+
+        <div class="header-center">
+            <h2>LoanSense AI</h2>
+        </div>
+
+        <div class="header-right">
+            <div class="profile-icon" id="profileToggle">👤</div>
+        </div>
+
+        <!-- PROFILE PANEL -->
+        <div class="profile-panel" id="profilePanel">
+            <div class="profile-panel-content">
+                <a href="borrower-dashboard.html">🏠 Home</a>
+                <a href="borrower-profile.html">👤 Profile</a>
+                <a href="loan-apply.html">📝 Apply Loan</a>
+                <a href="my-loans.html">📄 My Loans</a>
+                <a href="loan-repay.html" class="active">💰 Repayment</a>
+            </div>
+
+            <div class="profile-panel-footer">
+                <button class="logout-btn" onclick="logout()">Logout</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ================= MAIN CONTENT ================= -->
+    <main class="dashboard-content">
+
+        <div class="card wide-card">
+            <h2>Loan Repayment</h2>
+
+            <div class="table-wrapper">
+                <table id="repaymentTable">
+                    <thead>
+                        <tr>
+                            <th>Loan ID</th>
+                            <th>Type</th>
+                            <th>Tenure (Months)</th>
+                            <th>Remaining Amount</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+
+            <p id="message" class="message"></p>
+        </div>
+
+    </main>
+
+    <script src="../js/auth-guard.js"></script>
+    <script src="../js/logout.js"></script>
+    <script src="../js/menu-bar.js"></script>
+    <script src="../js/loan-repay.js"></script>
+
+</body>
+
+</html>
