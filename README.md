@@ -1,1 +1,1 @@
-# Loan_Management_System_POC
+# AI_Loan_Management_System
