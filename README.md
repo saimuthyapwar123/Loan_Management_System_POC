@@ -159,8 +159,7 @@ Create a `.env` file:
 
 ```
 MONGO_URI=your_mongodb_uri
-JWT_SECRET_KEY=your_secret_key
-LLM_API_KEY=your_llm_key
+GOOGLE_API_KEY=your_gemini_key
 ```
 
 ### 5️⃣ Run the Server
