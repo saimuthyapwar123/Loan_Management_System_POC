@@ -1,0 +1,82 @@
+.dashboard-content {
+    margin-top: 120px;
+    min-height: calc(100vh - 70px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pay-card {
+    width: 420px;
+    background: #fff;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.2);
+}
+
+.pay-card h2 {
+    text-align: center;
+}
+
+.sub-text {
+    text-align: center;
+    color: #6b7280;
+    margin-bottom: 20px;
+}
+
+.info-box {
+    background: #f1f5f9;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    font-weight: 600;
+    margin-bottom: 6px;
+    display: block;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+
+}
+
+.btn-primary {
+    width: 100%;
+    margin-top: 10px;
+    padding: 12px;
+    background: linear-gradient(135deg, #2563eb, #1e40af);
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    opacity: 0.95;
+}
+
+.message {
+    margin-top: 12px;
+    text-align: center;
+    font-weight: 600;
+}
+
+
+.hidden {
+    display: none;
+}

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>All Loan Status | Admin</title>
+
+  <link rel="icon" type="image/png" href="../assets/logo-favicon.png">
+  <link rel="stylesheet" href="../css/nav-bar.css">
+  <link rel="stylesheet" href="../css/admin-dashbord.css">
+  <link rel="stylesheet" href="../css/admin-loan-status.css">
+</head>
+
+<body>
+
+  <div class="dashboard-bg"></div>
+
+  <!-- ================= HEADER ================= -->
+  <header class="app-header">
+    <div class="header-left">
+      <img src="../assets/loan_logo.png" class="header-logo">
+    </div>
+
+    <div class="header-center">
+      <h2>LoanSense AI</h2>
+    </div>
+
+    <div class="header-right">
+      <div class="profile-icon" id="profileToggle">👤</div>
+    </div>
+
+    <!-- ===== FULL PROFILE PANEL ===== -->
+    <div class="profile-panel" id="profilePanel">
+
+      <div class="profile-panel-content">
+
+        <a href="admin-dashboard.html">🏠 Home</a>
+        <a href="admin-profile.html">👤 Profile</a>
+        <a href="admin-borrowers.html">👥 All Registered Borrowers</a>
+        <a href="admin-loan-status.html">📊 All Loan Status</a>
+
+        <!-- LOANS (STATUS BASED - BACKEND MAPPED) -->
+        <a href="admin-applied-loans.html">📄 Applied Loans</a>
+        <a href="admin-approve-loans.html">✅ Approved Loans</a>
+        <a href="admin-disburse-loans.html">💸 Disbursed Loans</a>
+        <a href="admin-closed-loans.html">🔒 Closed Loans</a>
+        <!-- <a href="admin-rejected-loans.html">❌ Rejected Loans</a>
+        <a href="admin-pending-amounts.html">⏳ Pending Amounts</a> -->
+
+      </div>
+
+      <!-- LOGOUT -->
+      <div class="profile-panel-footer">
+        <button class="logout-btn" onclick="logout()">Logout</button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ================= MAIN ================= -->
+  <main class="dashboard-content">
+
+    <div class="loan-status-card">
+
+      <div class="loan-status-header">
+        <h2>Loan Status Dashboard</h2>
+
+        <select id="statusFilter">
+          <option value="ALL">All</option>
+          <option value="APPLIED">Applied</option>
+          <option value="APPROVED">Approved</option>
+          <option value="DISBURSED">Disbursed</option>
+          <option value="REJECTED">Rejected</option>
+          <option value="CLOSED">Closed</option>
+        </select>
+      </div>
+
+      <table class="loan-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Aadhaar</th>
+            <th>Loan Type</th>
+            <th>Principal</th>
+            <th>Tenure</th>
+            <th>Total Payable</th>
+            <th>Status</th>
+            <th>Rejected Reason</th> 
+          </tr>
+        </thead>
+
+        <tbody id="loanTableBody">
+          <tr>
+            <td colspan="9">Loading loans...</td>
+          </tr>
+        </tbody>
+      </table>
+
+
+    </div>
+
+  </main>
+
+  <!-- ================= SCRIPTS ================= -->
+  <script src="../js/auth-guard.js"></script>
+  <script src="../js/menu-bar.js"></script>
+  <script src="../js/logout.js"></script>
+  <script src="../js/admin-loan-status.js"></script>
+
+</body>
+
+</html>

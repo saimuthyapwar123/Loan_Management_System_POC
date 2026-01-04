@@ -1,0 +1,80 @@
+*{
+    font-family: "Segoe UI", sans-serif;
+}
+/* ===============================
+   DASHBOARD CONTENT
+================================ */
+.dashboard-content {
+    margin-top: 30px; /* navbar height */
+    height: calc(100vh - 60px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ===============================
+   CENTER PROFILE CARD
+================================ */
+.profile-center-container {
+    height: 100%;
+    display: flex;
+    justify-content: center;   /* horizontal center */
+    align-items: center;       /* vertical center */
+}
+
+/* ===============================
+   PROFILE CARD
+================================ */
+.profile-card {
+    width: 520px;
+    padding: 32px;
+
+    background: #ffffff;
+    border-radius: 16px;
+
+    box-shadow: 0 20px 45px rgba(0,0,0,0.25);
+}
+
+/* ===============================
+   PROFILE TITLE
+================================ */
+.profile-title {
+    text-align: center;
+    font-size: 26px;
+    color: #0f172a;
+    margin-bottom: 12px;
+}
+
+/* ===============================
+   HORIZONTAL DIVIDER
+================================ */
+.profile-divider {
+    border: none;
+    height: 1px;
+    background: linear-gradient(
+        to right,
+        transparent,
+        #cbd5e1,
+        transparent
+    );
+    margin-bottom: 22px;
+}
+
+/* ===============================
+   PROFILE ROWS
+================================ */
+.profile-card p {
+    display: grid;
+    grid-template-columns: 0.4fr 1fr; /* label | value */
+    gap: 12px;
+    margin-bottom: 14px;
+    font-size: 15px;
+    align-items: center;
+}
+
+
+.profile-card b {
+    min-width: 120px;
+    color: #334155;
+}

@@ -1,0 +1,118 @@
+
+.loan-card {
+    background: #fff;
+    width: 100%;
+    max-width: 1200px;
+    padding: 28px;
+    border-radius: 18px;
+    box-shadow: 0 18px 40px rgba(0,0,0,0.18);
+}
+
+.loan-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.loan-table th,
+.loan-table td {
+    padding: 12px;
+    border-bottom: 1px solid #e2e8f0;
+    text-align: center;
+}
+
+.loan-table td{
+    font-size: small;
+}
+
+.loan-table th {
+    background: #f8fafc;
+}
+
+/* ACTION BUTTONS */
+.approve-btn {
+    background: #22c55e;
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-right: 6px;
+}
+
+.reject-btn {
+    background: #ef4444;
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* ===============================
+   MODAL
+================================ */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 24px;
+    width: 420px;
+    border-radius: 16px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+}
+
+.modal-content h3 {
+    margin-bottom: 12px;
+}
+
+/* ===============================
+   TEXTAREA (FIXED)
+================================ */
+.modal-content textarea {
+    width: 100%;
+    height: 100px;
+
+    padding: 15px 0px 12px 5px;
+    margin-top: 10px;
+
+    border-radius: 12px;
+    border: 2px solid #cbd5e1;   /* clean soft border */
+    outline: none;
+
+    font-size: 14px;
+    font-family: inherit;
+
+    resize: none;               /* ✅ removes 3-line resize icon */
+}
+
+/* Focus state */
+.modal-content textarea:focus {
+    border-color: #2563eb;       /* blue focus like modern UI */
+    box-shadow: 0 0 0 3px rgba(37,99,235,0.15);
+}
+
+/* ===============================
+   MODAL ACTIONS
+================================ */
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 16px;
+}
+
+.cancel-btn {
+    background: #e5e7eb;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+}

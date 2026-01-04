@@ -1,0 +1,227 @@
+/* ===============================
+   CHATBOT CONTAINER
+================================ */
+.chatbot-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+
+    z-index: 9999;
+    pointer-events: auto;
+
+    transition: transform 0.35s ease;
+}
+
+/* Sidebar open shift */
+body.sidebar-active .chatbot-container {
+    transform: translateX(-260px);
+}
+
+/* ===============================
+   CHATBOT BUTTON
+================================ */
+.chatbot-btn {
+    width: 56px;
+    height: 56px;
+    background: linear-gradient(135deg, #0ea5e9, #2563eb);
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 24px;
+    color: #ffffff;
+    cursor: pointer;
+
+    box-shadow: 0 10px 24px rgba(37,99,235,0.45);
+    transition: all 0.25s ease;
+
+    z-index: 10000;
+}
+
+.chatbot-btn:hover {
+    transform: translateY(-3px) scale(1.05);
+}
+
+/* ===============================
+   CHATBOX
+================================ */
+.chatbox {
+    position: fixed;
+    bottom: 88px;
+    right: 20px;
+
+    width: 340px;
+    background: #0f172a;
+    border-radius: 14px;
+
+    display: flex;
+    flex-direction: column;
+
+    opacity: 0;
+    transform: translateY(14px) scale(0.96);
+    pointer-events: none;
+    transition: all 0.25s ease;
+
+    box-shadow: 0 18px 36px rgba(0,0,0,0.45);
+    z-index: 10001;
+}
+
+.chatbox.active {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+}
+
+/* ===============================
+   CHAT HEADER
+================================ */
+.chat-header {
+    background: linear-gradient(135deg, #0ea5e9, #2563eb);
+    color: #0f172a;
+
+    padding: 10px 12px;
+    border-radius: 14px 14px 0 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+#closeChat {
+    cursor: pointer;
+    font-size: 14px;
+}
+
+/* ===============================
+   CHAT BODY
+================================ */
+.chat-body {
+    padding: 12px;
+    height: 360px;
+    overflow-y: auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    font-size: 13px;
+    line-height: 1.45;
+    color: #e5e7eb;
+}
+
+/* ===============================
+   CHAT MESSAGES
+================================ */
+
+/* User message (Right side) */
+.user-msg {
+    align-self: flex-end;
+
+    background: #2563eb;
+    color: #ffffff;
+
+    padding: 6px 10px;
+    max-width: 75%;
+
+    border-radius: 12px 12px 4px 12px;
+    font-size: 13px;
+}
+
+/* Bot message (Left side) */
+.bot-msg {
+    align-self: flex-start;
+
+    background: #f1f5f9;
+    color: #0f172a;
+
+    padding: 6px 10px;
+    max-width: 75%;
+
+    border-radius: 12px 12px 12px 4px;
+    font-size: 13px;
+}
+
+/* Subtle message animation */
+.user-msg,
+.bot-msg {
+    animation: fadeSlide 0.18s ease-out;
+}
+
+@keyframes fadeSlide {
+    from {
+        opacity: 0;
+        transform: translateY(4px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===============================
+   CHAT INPUT
+================================ */
+.chat-input {
+    display: flex;
+    border-top: 1px solid rgba(255,255,255,0.12);
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 8px 10px;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+    color: #e5e7eb;
+
+    font-size: 13px;
+}
+
+.chat-input input::placeholder {
+    color: #94a3b8;
+}
+
+.chat-input button {
+    background: linear-gradient(135deg, #0ea5e9, #2563eb);
+    border: none;
+
+    padding: 8px 12px;
+    cursor: pointer;
+
+    color: #ffffff;
+    font-size: 14px;
+}
+
+/* ===============================
+   BACKGROUND FIX (CRITICAL)
+================================ */
+.dashboard-bg {
+    pointer-events: none;
+}
+
+/* Disable click blocking when panel is closed */
+.profile-panel {
+    pointer-events: none;
+}
+
+/* Enable clicks only when open */
+.profile-panel.active {
+    pointer-events: auto;
+}
+
+/* Let clicks pass through header */
+.app-header {
+    pointer-events: none;
+}
+
+/* Allow interaction only inside header */
+.app-header * {
+    pointer-events: auto;
+}

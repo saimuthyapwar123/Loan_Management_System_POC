@@ -1,0 +1,34 @@
+[{
+  "_id": {
+    "$oid": "69205f2b8a717252ff152bdd"
+  },
+  "username": "ramu@gamil.com",
+  "password": "$2b$12$/wbrmU5TqjbR5r/9oKsrsOs8FpUSzyF7fUQSiDcgqcZouuxzhP7mW",
+  "first_name": "Gola",
+  "last_name": "Ramu",
+  "dob": "1993-01-26",
+  "address": "Pune",
+  "email": "ramu@gamil.com",
+  "aadhar_number": {
+    "$numberLong": "783903654286"
+  },
+  "pan_number": "ALOKW1989K",
+  "role": "ADMIN"
+},
+{
+  "_id": {
+    "$oid": "6922c0ef9fb2b16a8fb5cd2d"
+  },
+  "username": "mani@gamil.com",
+  "password": "$2b$12$JosPVmomnigxrY2x0Aga7uzN0FrCquRm5cJ2Mm5iVSmjZlazDRrxS",
+  "first_name": "Maniram",
+  "last_name": "Rathod",
+  "dob": "1985-11-10",
+  "address": "Pune",
+  "email": "mani@gamil.com",
+  "aadhar_number": {
+    "$numberLong": "897626550098"
+  },
+  "pan_number": "MKLWE2310G",
+  "role": "ADMIN"
+}]
