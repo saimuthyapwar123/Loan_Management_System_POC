@@ -1,6 +1,7 @@
 from langgraph.graph import StateGraph, END
 from langchain_core.prompts import PromptTemplate
 from langchain_google_genai import ChatGoogleGenerativeAI
+from langchain_groq import ChatGroq
 from langchain_core.tools import Tool
 
 from ai_chatbot.app.vector_store.chroma_store import get_chroma_retriever
@@ -113,17 +114,17 @@ async def generate_answer_node(state: RAGState):
         """
     )
 
-    # llm = ChatGroq(
-    #     model="llama-3.1-8b-instant",
-    #     api_key=GROQ_API_KEY,
-    #     temperature=0
-    # )
-
-    llm = ChatGoogleGenerativeAI(
-        model="models/gemini-2.5-flash",
-        api_key=GOOGLE_API_KEY,
-        temperature=0.3
+    llm = ChatGroq(
+        model="llama-3.1-8b-instant",
+        api_key=GROQ_API_KEY,
+        temperature=0
     )
+
+    # llm = ChatGoogleGenerativeAI(
+    #     model="models/gemini-2.5-flash",
+    #     api_key=GOOGLE_API_KEY,
+    #     temperature=0.3
+    # )
 
     result = await llm.ainvoke(
         prompt.format(
