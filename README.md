@@ -1,6 +1,6 @@
 # AI Loan Management System
 
-An **AI-powered Loan Management System** built with  **FastAPI** ,  **MongoDB** , and  **Generative AI (RAG + LLMs)** . This project automates the complete loan lifecycle for borrowers and administrators, while providing intelligent, policy-aware conversational AI assistance.
+An **AI-powered Loan Management System** built with  **FastAPI** ,  **MongoDB** , and  **Generative AI (RAG + LLMs)** . This project automates the complete loan lifecycle for borrowers and administrators, while providing stateful, memory-enabled conversational AI assistance.
 
 🔗 **GitHub Repository:** [https://github.com/saimuthyapwar123/AI_Loan_Management_System](https://github.com/saimuthyapwar123/AI_Loan_Management_System)
 
@@ -41,6 +41,7 @@ The system combines **traditional backend banking workflows** with **Generative 
 
 * **LangChain**
 * **LangGraph** (Multi-agent orchestration)
+* **MongoDBSaver** (Checkpoint-based conversational memory)
 * **ChromaDB** (Vector Database)
 * **Sentence Transformers** (Embeddings)
 * **Google Gemini / Groq LLMs**
@@ -79,12 +80,13 @@ The system combines **traditional backend banking workflows** with **Generative 
   * AI uses:
     * Loan policy documents (RAG)
     * Borrower-specific loan data from MongoDB
+    * Conversation memory via MongoDB checkpointer
 
 ---
 
 ### 🧑‍💼 Admin Features
 
-1. **Register & Login** (Admin-only access)
+1. **Register & Login** (Admin-only access)(JWT-based authentication)
 2. **Borrower Management**
    * View all registered borrowers
 3. **Loan Management Dashboard**
@@ -107,6 +109,7 @@ The system combines **traditional backend banking workflows** with **Generative 
 * **Home Page Chatbot**
   * AI retrieves answers from **loan policy documents**
   * Helps admins understand policies and decisions
+  * Stateful memory across conversations
 
 ---
 
@@ -119,6 +122,7 @@ The system combines **traditional backend banking workflows** with **Generative 
   2. Matched against vector DB
   3. Passed to LLM with retrieved context
 * Responses are **policy-grounded** (no hallucination)
+* State is checkpointed to MongoDB
 
 ---
 
@@ -128,6 +132,7 @@ The system combines **traditional backend banking workflows** with **Generative 
 * Role-based authorization (BORROWER / ADMIN)
 * Secure password hashing
 * Protected admin routes
+* Memory isolated per user via `thread_id`
 
 ---
 
